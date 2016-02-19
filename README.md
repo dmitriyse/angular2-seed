@@ -2,7 +2,6 @@
 
 Integration showcase of [angular2-seed-ng2-bootstrap](https://github.com/ludohenin/angular2-seed-ng2-bootstrap) (Itself an integration of [ng2-bootstrap](http://valor-software.github.io/ng2-bootstrap/) with [angular2-seed](https://mgechev.github.io/angular2-seed)) and [SB Admin 2.0](http://startbootstrap.com/template-overviews/sb-admin-2/).
 
-[![Join the chat at https://gitter.im/AngularShowcase/ng2-bootstrap-sbadmin](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AngularShowcase/ng2-bootstrap-sbadmin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Dependency Status](https://david-dm.org/AngularShowcase/ng2-bootstrap-sbadmin.svg)](https://david-dm.org/AngularShowcase/ng2-bootstrap-sbadmin)
 [![devDependency Status](https://david-dm.org/AngularShowcase/ng2-bootstrap-sbadmin/dev-status.svg)](https://david-dm.org/AngularShowcase/ng2-bootstrap-sbadmin#info=devDependencies)
 [![Build Status](https://travis-ci.org/AngularShowcase/ng2-bootstrap-sbadmin.svg?branch=master)](https://travis-ci.org/AngularShowcase/ng2-bootstrap-sbadmin)
