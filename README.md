@@ -33,88 +33,183 @@ _Does not rely on any global dependencies._
 .
 ├── LICENSE
 ├── README.md
-├── app
-│   ├── bootstrap.ts
-│   ├── components
-│   │   ├── about
-│   │   │   ├── about.html
-│   │   │   ├── about.ts
-│   │   │   └── about_spec.ts
-│   │   ├── app
-│   │   │   ├── app.css
-│   │   │   ├── app.html
-│   │   │   ├── app.ts
-│   │   │   └── app_spec.ts
-│   │   └── home
-│   │       ├── home.css
-│   │       ├── home.html
-│   │       ├── home.ts
-│   │       └── home_spec.ts
-│   ├── index.html
-│   ├── services
-│   │   ├── name_list.ts
-│   │   └── name_list_spec.ts
-│   ├── system.config.js
-│   └── typings.d.ts
+├── appveyor.yml
+├── circle.yml
 ├── gulpfile.ts
 ├── karma.conf.js
 ├── package.json
-├── test
-│   ├── components
-│   │   ├── about
-│   │   │   ├── about.js
-│   │   │   └── about_spec.js
-│   │   ├── app
-│   │   │   ├── app.js
-│   │   │   └── app_spec.js
-│   │   └── home
-│   │       ├── home.js
-│   │       └── home_spec.js
-│   └── services
-│       ├── name_list.js
-│       └── name_list_spec.js
+├── protractor.conf.js
+├── src
+│   └── client
+│       ├── app
+│       │   ├── components
+│       │   │   ├── app
+│       │   │   │   ├── app.css
+│       │   │   │   ├── app.html
+│       │   │   │   └── app.ts
+│       │   │   ├── auth
+│       │   │   │   ├── auth.css
+│       │   │   │   ├── auth.html
+│       │   │   │   ├── auth.spec.ts
+│       │   │   │   └── auth.ts
+│       │   │   ├── buttons
+│       │   │   │   ├── buttons.css
+│       │   │   │   ├── buttons.html
+│       │   │   │   ├── buttons.spec.ts
+│       │   │   │   └── buttons.ts
+│       │   │   ├── chart
+│       │   │   │   ├── api
+│       │   │   │   │   └── chart.json
+│       │   │   │   ├── chart-element.html
+│       │   │   │   ├── chart.css
+│       │   │   │   ├── chart.html
+│       │   │   │   ├── chart.spec.ts
+│       │   │   │   └── chart.ts
+│       │   │   ├── form
+│       │   │   │   ├── form.css
+│       │   │   │   ├── form.html
+│       │   │   │   ├── form.spec.ts
+│       │   │   │   └── form.ts
+│       │   │   ├── grid
+│       │   │   │   ├── grid.css
+│       │   │   │   ├── grid.html
+│       │   │   │   ├── grid.spec.ts
+│       │   │   │   └── grid.ts
+│       │   │   ├── header
+│       │   │   │   ├── header-notification.html
+│       │   │   │   ├── header.html
+│       │   │   │   ├── header.ts
+│       │   │   │   ├── sidebar-search.html
+│       │   │   │   └── sidebar.html
+│       │   │   ├── home
+│       │   │   │   ├── chat.html
+│       │   │   │   ├── home.css
+│       │   │   │   ├── home.html
+│       │   │   │   ├── home.spec.ts
+│       │   │   │   ├── home.ts
+│       │   │   │   ├── notifications.html
+│       │   │   │   ├── stats.html
+│       │   │   │   ├── timeline.css
+│       │   │   │   └── timeline.html
+│       │   │   ├── icons
+│       │   │   │   ├── icons.css
+│       │   │   │   ├── icons.html
+│       │   │   │   ├── icons.spec.ts
+│       │   │   │   └── icons.ts
+│       │   │   ├── notifications
+│       │   │   │   ├── notifications.css
+│       │   │   │   ├── notifications.html
+│       │   │   │   ├── notifications.spec.ts
+│       │   │   │   └── notifications.ts
+│       │   │   ├── panels-wells
+│       │   │   │   ├── panels-wells.css
+│       │   │   │   ├── panels-wells.html
+│       │   │   │   ├── panels-wells.spec.ts
+│       │   │   │   └── panels-wells.ts
+│       │   │   ├── table
+│       │   │   │   ├── table.css
+│       │   │   │   ├── table.html
+│       │   │   │   ├── table.spec.ts
+│       │   │   │   └── table.ts
+│       │   │   └── typography
+│       │   │       ├── typography.css
+│       │   │       ├── typography.html
+│       │   │       ├── typography.spec.ts
+│       │   │       └── typography.ts
+│       │   └── shared
+│       │       ├── index.ts
+│       │       └── services
+│       │           ├── name_list.spec.ts
+│       │           └── name_list.ts
+│       ├── assets
+│       │   └── img
+│       │       └── smile2.gif
+│       ├── css
+│       │   ├── main.css
+│       │   └── sb-admin-2.css
+│       ├── index.html
+│       ├── main.ts
+│       └── npm-debug.log
 ├── test-main.js
 ├── tools
+│   ├── README.md
+│   ├── config
+│   │   ├── project.config.ts
+│   │   ├── seed.config.interfaces.ts
+│   │   └── seed.config.ts
 │   ├── config.ts
-│   ├── preinstall.js
+│   ├── debug.ts
+│   ├── manual_typings
+│   │   ├── project
+│   │   │   └── sample.package.d.ts
+│   │   └── seed
+│   │       ├── angular2-hot-loader.d.ts
+│   │       ├── autoprefixer.d.ts
+│   │       ├── colorguard.d.ts
+│   │       ├── connect-livereload.d.ts
+│   │       ├── cssnano.d.ts
+│   │       ├── doiuse.d.ts
+│   │       ├── express-history-api-fallback.d.ts
+│   │       ├── istream.d.ts
+│   │       ├── karma.d.ts
+│   │       ├── merge-stream.d.ts
+│   │       ├── open.d.ts
+│   │       ├── postcss-reporter.d.ts
+│   │       ├── slash.d.ts
+│   │       ├── stylelint.d.ts
+│   │       ├── systemjs-builder.d.ts
+│   │       ├── tildify.d.ts
+│   │       └── tiny-lr.d.ts
 │   ├── tasks
-│   │   ├── build.csslib.dev.ts
-│   │   ├── build.docs.ts
-│   │   ├── build.fonts.ts
-│   │   ├── build.index.dev.ts
-│   │   ├── build.js.dev.ts
-│   │   ├── build.jslib.dev.ts
-│   │   ├── build.sass.dev.ts
-│   │   ├── build.test.ts
-│   │   ├── clean.ts
-│   │   ├── karma.start.ts
-│   │   ├── npm.ts
-│   │   ├── server.docs.ts
-│   │   ├── server.start.ts
-│   │   ├── tsd.ts
-│   │   ├── tslint.ts
-│   │   ├── watch.dev.ts
-│   │   ├── watch.serve.ts
-│   │   └── watch.test.ts
-│   ├── typings
-│   │   ├── connect-livereload.d.ts
-│   │   ├── gulp-load-plugins.d.ts
-│   │   ├── karma.d.ts
-│   │   ├── tiny-lr.d.ts
-│   │   ├── ng2_test.d.ts
-│   │   ├── open.d.ts
-│   │   ├── run-sequence.d.ts
-│   │   ├── slash.d.ts
-│   │   └── yargs.d.ts
+│   │   ├── project
+│   │   │   └── sample.task.ts
+│   │   └── seed
+│   │       ├── build.assets.dev.ts
+│   │       ├── build.assets.prod.ts
+│   │       ├── build.bundles.app.ts
+│   │       ├── build.bundles.ts
+│   │       ├── build.docs.ts
+│   │       ├── build.html_css.ts
+│   │       ├── build.index.dev.ts
+│   │       ├── build.index.prod.ts
+│   │       ├── build.js.dev.ts
+│   │       ├── build.js.e2e.ts
+│   │       ├── build.js.prod.ts
+│   │       ├── build.js.test.ts
+│   │       ├── build.js.tools.ts
+│   │       ├── check.versions.ts
+│   │       ├── clean.all.ts
+│   │       ├── clean.dev.ts
+│   │       ├── clean.prod.ts
+│   │       ├── clean.tools.ts
+│   │       ├── copy.js.prod.ts
+│   │       ├── css-lint.ts
+│   │       ├── karma.start.ts
+│   │       ├── serve.coverage.ts
+│   │       ├── serve.docs.ts
+│   │       ├── server.prod.ts
+│   │       ├── server.start.ts
+│   │       ├── tslint.ts
+│   │       ├── watch.dev.ts
+│   │       ├── watch.e2e.ts
+│   │       └── watch.test.ts
 │   ├── utils
-│   │   ├── server.ts
-│   │   ├── tasks-tools.ts
-│   │   ├── template-injectables.ts
-│   │   └── template-locals.ts
+│   │   ├── project
+│   │   │   └── sample_util.ts
+│   │   ├── project.utils.ts
+│   │   ├── seed
+│   │   │   ├── clean.ts
+│   │   │   ├── code_change_tools.ts
+│   │   │   ├── server.ts
+│   │   │   ├── tasks_tools.ts
+│   │   │   ├── template_locals.ts
+│   │   │   ├── tsproject.ts
+│   │   │   └── watch.ts
+│   │   └── seed.utils.ts
 │   └── utils.ts
 ├── tsconfig.json
-├── tsd.json
-└── tslint.json
+├── tslint.json
+└── typings.json
 ```
 
 # Configuration
