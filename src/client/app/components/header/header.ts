@@ -1,13 +1,14 @@
 import {Component, ElementRef} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
-import {Dropdown, DropdownMenu, DropdownToggle, ACCORDION_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import {ACCORDION_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import {DropdownDirective, DropdownMenuDirective, DropdownToggleDirective} from 'ng2-bootstrap/components/dropdown';
 
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
   selector: 'header-notification',
   templateUrl: 'app/components/header/header-notification.html',
-  directives: [Dropdown, DropdownMenu, DropdownToggle, ROUTER_DIRECTIVES, CORE_DIRECTIVES],
-  viewProviders: [Dropdown, DropdownMenu, DropdownToggle, ElementRef]
+  directives: [DropdownDirective, DropdownMenuDirective, DropdownToggleDirective, ROUTER_DIRECTIVES, CORE_DIRECTIVES],
+  viewProviders: [DropdownDirective, DropdownMenuDirective, DropdownToggleDirective, ElementRef]
 })
 export class HeaderNotification {
   toggled(open:boolean):void {
