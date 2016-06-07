@@ -1,3 +1,7 @@
+# WARNING
+
+This project is no longer maintained. For Angular 2 starter take a look at the [angular2-seed](https://github.com/mgechev/angular2-seed), that this project is based on.
+
 # angular2-seed & ng2-bootstrap & SB Admin 2.0
 
 Integration showcase of [angular2-seed-ng2-bootstrap](https://github.com/ludohenin/angular2-seed-ng2-bootstrap) (Itself an integration of [ng2-bootstrap](http://valor-software.github.io/ng2-bootstrap/) with [angular2-seed](https://mgechev.github.io/angular2-seed)) and [SB Admin 2.0](http://startbootstrap.com/template-overviews/sb-admin-2/).
