@@ -1,7 +1,7 @@
 import * as gulpLoadPlugins from 'gulp-load-plugins';
 import { join } from 'path';
 
-import { APP_SRC } from '../../config';
+import Config from '../../config';
 
 const plugins = <any>gulpLoadPlugins();
 
