@@ -20,7 +20,7 @@ export function makeTsProject(options: Object = {}, isToolsProject?: boolean): a
 
     tsProjects[optionsHash] =
       plugins.typescript.createProject(
-        isToolsProject ? 'tsconfig.json' : join(APP_SRC, 'tsconfig.json'), config);
+        isToolsProject ? 'tsconfig.json' : join(Config.APP_SRC, 'tsconfig.json'), config);
   }
   return tsProjects[optionsHash];
 }
