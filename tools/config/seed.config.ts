@@ -207,7 +207,7 @@ export class SeedConfig {
    * The folder for built files in the `dev` environment.
    * @type {string}
    */
-  DEV_DEST = `${this.DIST_DIR}/dev`;
+  DEV_DEST = `wwwroot`;
 
   /**
    * The folder for the built files in the `prod` environment.
@@ -363,6 +363,15 @@ export class SeedConfig {
     },
     packages: {
       rxjs: { defaultExtension: 'js' }
+    },
+    meta: {
+        'node_modules/*.js': {
+            scriptLoad: true,
+            format: 'register'
+        },
+        'app/*.js': {
+            scriptLoad: true
+        }
     }
   };
 

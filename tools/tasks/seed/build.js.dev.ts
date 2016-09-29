@@ -7,6 +7,8 @@ import { join/*, sep, relative*/ } from 'path';
 import Config from '../../config';
 import { makeTsProject, templateLocals } from '../../utils';
 
+var through = require('through2');
+
 const plugins = <any>gulpLoadPlugins();
 
 const jsonSystemConfig = JSON.stringify(Config.SYSTEM_CONFIG_DEV);
@@ -58,8 +60,26 @@ export = () => {
     typedBuildCounter++;
   }
 
+  function prefixSources(prefix: any) {
+      function process(file: any, encoding: any, callback: any) {
+
+          if (file.sourceMap) {
+              for (var i in file.sourceMap.sources) {
+                  var source = file.sourceMap.sources[i];
+                  file.sourceMap.sources[i] = prefix + source;
+              }
+          }
+
+          this.push(file);
+          return callback();
+      }
+
+      return through.obj(process);
+  }
+
   return result.js
-    .pipe(plugins.sourcemaps.write())
+    .pipe(prefixSources('/../src/client/'))
+    .pipe(plugins.sourcemaps.write('.', { sourceRoot: '', includeContent: false }))
 // Use for debugging with Webstorm/IntelliJ
 // https://github.com/mgechev/angular2-seed/issues/1220
 //    .pipe(plugins.sourcemaps.write('.', {

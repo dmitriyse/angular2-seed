@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "system",
     "declaration": false,
-    "removeComments": true,
+    "removeComments": false,
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
     "pretty": true,
     "allowUnreachableCode": false,
+    "allowSyntheticDefaultImports": true,
     "allowUnusedLabels": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
     "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
     "typeRoots": [
       "../../node_modules/@types",
       "../../node_modules"

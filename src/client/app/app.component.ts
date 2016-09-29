@@ -7,7 +7,7 @@ import './operators';
  * applications routes, configuring the paths for the lazy loaded components (HomeComponent, AboutComponent).
  */
 @Component({
-  moduleId: module.id,
+  moduleId: __moduleName || module.id as string,
   selector: 'sd-app',
   templateUrl: 'app.component.html',
 })

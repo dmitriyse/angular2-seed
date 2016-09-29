@@ -5,7 +5,7 @@ import { NameListService } from '../shared/index';
  * This class represents the lazy loaded HomeComponent.
  */
 @Component({
-  moduleId: module.id,
+  moduleId: __moduleName || module.id as string,
   selector: 'sd-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
