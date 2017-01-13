@@ -1,4 +1,3 @@
-
 import * as gulp from 'gulp';
 import * as gulpLoadPlugins from 'gulp-load-plugins';
 import * as merge from 'merge-stream';
@@ -6,14 +5,12 @@ import * as util from 'gulp-util';
 import { join/*, sep, relative*/ } from 'path';
 
 import Config from '../../config';
-import { makeTsProject, templateLocals } from '../../utils';
+import { makeTsProject, TemplateLocalsBuilder } from '../../utils';
 import { TypeScriptTask } from '../typescript_task';
 
 var through = require('through2');
 
 const plugins = <any>gulpLoadPlugins();
-
-const jsonSystemConfig = JSON.stringify(Config.SYSTEM_CONFIG_DEV);
 
 let typedBuildCounter = Config.TYPED_COMPILE_INTERVAL; // Always start with the typed build.
 
@@ -84,17 +81,13 @@ export =
         .pipe(prefixSources('/../src/client/'))
         .pipe(plugins.sourcemaps.write('.', { sourceRoot: '', includeContent: false }))
         // Use for debugging with Webstorm/IntelliJ
-        // https://github.com/mgechev/angular2-seed/issues/1220
+        // https://github.com/mgechev/angular-seed/issues/1220
         //    .pipe(plugins.sourcemaps.write('.', {
         //      includeContent: false,
         //      sourceRoot: (file: any) =>
         //        relative(file.path, PROJECT_ROOT + '/' + APP_SRC).replace(sep, '/') + '/' + APP_SRC
         //    }))
-        .pipe(plugins.template(Object.assign(
-          templateLocals(), {
-            SYSTEM_CONFIG_DEV: jsonSystemConfig
-          }
-         )))
+        .pipe(plugins.template(new TemplateLocalsBuilder().withStringifiedSystemConfigDev().build()))
         .pipe(gulp.dest(Config.APP_DEST));
       }
   };
