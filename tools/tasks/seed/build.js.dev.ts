@@ -89,6 +89,6 @@ export =
         //    }))
         .pipe(plugins.template(new TemplateLocalsBuilder().withStringifiedSystemConfigDev().build()))
         .pipe(gulp.dest(Config.APP_DEST));
-      }
+    }
   };
 
