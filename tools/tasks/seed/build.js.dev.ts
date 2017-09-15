@@ -8,7 +8,6 @@ import Config from '../../config';
 import { makeTsProject, TemplateLocalsBuilder } from '../../utils';
 import { TypeScriptTask } from '../typescript_task';
 
-var through = require('through2');
 
 const plugins = <any>gulpLoadPlugins();
 
@@ -60,8 +59,7 @@ export = class BuildJsDev extends TypeScriptTask {
 
     return (
       result.js
-        .pipe(prefixSources('/../src/client/'))
-        .pipe(plugins.sourcemaps.write('.', { sourceRoot: '', includeContent: false }))
+       .pipe(plugins.sourcemaps.write())
         // Use for debugging with Webstorm/IntelliJ
         // https://github.com/mgechev/angular-seed/issues/1220
         //    .pipe(plugins.sourcemaps.write('.', {
