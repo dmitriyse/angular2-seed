@@ -6,7 +6,7 @@ import './operators';
  * This class represents the main application component.
  */
 @Component({
-  moduleId: __moduleName || module.id as string,
+  moduleId: module.id,
   selector: 'sd-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
