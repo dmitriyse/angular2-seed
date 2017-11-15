@@ -29,8 +29,7 @@ build/Release
 # Dependency directory
 # Commenting this out is preferred by some people, see
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
-/node_modules/
-/typings/
+node_modules
 typings
 ts-node
 
@@ -59,11 +58,6 @@ gulpfile.js.map
 src/client/app/shared/config/env.config.js
 src/client/app/shared/config/env.config.js.map
 
-**/*.js
-**/*.js.map
-bin/**/*
-obj/**/*
-wwwroot/**/*
-*.lock.json
-
-.vs/*
+tools/env/env-config.interface.d.ts
+tools/env/env-config.interface.ngsummary.json
+tools/manual_typings/project/sample.package.ngsummary.json
