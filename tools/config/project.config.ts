@@ -1,7 +1,7 @@
 import { join } from 'path';
 
 import { SeedConfig } from './seed.config';
-// import { ExtendPackages } from './seed.config.interfaces';
+import { ExtendPackages } from './seed.config.interfaces';
 
 /**
  * This class extends the basic seed configuration, allowing for project specific overrides. A few examples can be found
@@ -22,7 +22,6 @@ export class ProjectConfig extends SeedConfig {
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
-      { src: 'ng2-bootstrap/bundles/ngx-bootstrap.umd.js', inject: 'lib' },
       { src: 'bootstrap/dist/css/bootstrap.css', inject: true },
       { src: 'font-awesome/css/font-awesome.min.css', inject: true }
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
@@ -46,13 +45,19 @@ export class ProjectConfig extends SeedConfig {
     ];
 
     // Add packages (e.g. ng2-translate)
-    // let additionalPackages: ExtendPackages[] = [{
-    //   name: 'ng2-translate',
-    //   // Path to the package's bundle
-    //   path: 'node_modules/ng2-translate/bundles/ng2-translate.umd.js'
-    // }];
-    //
-    // this.addPackagesBundles(additionalPackages);
+    let additionalPackages: ExtendPackages[] = [
+        {
+          name:'ngx-bootstrap',
+          path:'node_modules/ngx-bootstrap/bundles/ngx-bootstrap.umd.min.js'
+        },    
+
+        {
+          name:'ngx-bootstrap/*',
+          path:'node_modules/ngx-bootstrap/bundles/ngx-bootstrap.umd.min.js'
+        }
+    ];
+    
+     this.addPackagesBundles(additionalPackages);
 
     /* Add proxy middleware */
     // this.PROXY_MIDDLEWARE = [
